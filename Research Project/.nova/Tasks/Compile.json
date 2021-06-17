@@ -1,0 +1,14 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "pdflatex Draft.tex"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "open Draft.pdf"
+    }
+  },
+  "buildBeforeRunning" : true,
+  "identifier" : "7A0E9740-D8E6-400D-9D12-0F0564206CEB"
+}
