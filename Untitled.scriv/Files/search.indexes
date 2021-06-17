@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SearchIndexes Version="1.0">
+    <Documents>
+        <Document ID="E1163B1C-CF5E-4C4E-A2B6-B8B13DF883C8">
+            <Title>Method</Title>
+        </Document>
+        <Document ID="D3787E39-8556-4907-8040-34A5BE47A7BC">
+            <Title>Participants</Title>
+        </Document>
+        <Document ID="62FE5B5B-966F-42D3-8EEF-90B64069337C">
+            <Title>About</Title>
+            <Text>APA PAPER TEMPLATE
+
+About
+This template is designed to produce a paper that adheres to the APA (American Psychological Association) format. However, you should check the exact guidelines of the institution to which you are submitting your paper, as there can be slight variations in expectations.
+
+How To Use This Template
+	•	Unless otherwise stated, you do not need to worry about the font and formatting you use to write your paper in Scrivener—the required formatting will be applied to the printed or exported document during Compile.
+	•	Likewise, the titles for each section will be added during Compile, so you only need to write the text for each section—do not type out any titles in the editor.
+	•	Write the text of your abstract in the “Abstract” document.
+	•	Write your introduction in the “Introduction” document.
+	•	Compose the main body of your paper in text documents inside the “Main Content” folder. When compiled, the style of heading used for documents inside the “Main Content” folder will be determined by their indentation. As per the APA specifications:
+	⁃	Documents indented one level inside the “Main Content” folder (“Method”, “Results” and “Discussion”) will be treated as Level 1 APA sections, with bold and centred titles.
+	⁃	Documents indented two levels deep in the “Main Content” folder (“Participants”, “Research Design”, and so on) will be treated as Level 2 APA sections, with bold and left-aligned titles.
+	⁃	Documents indented three levels deep in the “Main Content” folder will be treated as Level 3 APA sections and their titles will be bold and inserted at the start of the text rather than on their own line.
+	⁃	APA Level 4 and Level 5 headings are supported in the same way.
+	•	Note that the documents provided inside the “Main Content” folder are just by way of example and can be deleted or renamed as necessary.
+	•	Indent block quotes or other special passages using styles. For instance, to add a block quote, choose “Block Quote” from the Format &gt; Style menu (or from the styles button in the format bar). The required APA formatting will be applied to block quotes during Compile.
+	•	For specially-formatted passages you can also use the exact formatting you require and enclose them in a “Preserve Formatting” block. This tells Scrivener not to override or change the formatting for such passages during Compile. To do so, select the passage and go to Format &gt; Preserve Formatting. All other text (excepting text with styles applied) will have the default APA indentation assigned during the compilation process.
+	•	Edit the “References” file so that it contains your bibliography, being careful to adhere to APA formatting requirements. (Please note that the dummy text in the “References” file is provided only as a rough example and not as an exemplar. Do not use it as the basis for your own references—instead, refer to the APA formatting guidelines online or as provided by your institution.)
+	•	This template includes a “Footnotes” document which will be used to hold any footnotes you have created in the main body of the text. If you have not created any footnotes, you should either delete this document or deselect its “Include in Compile” setting in the Inspector or Compile panel.
+	•	Create as many appendix documents as you require inside the “Appendices” folder, making sure that “Appendix” is set as the “Section Type” for each in the Inspector or “Contents” pane of the Compile panel.
+	⁃	The title of each appendix document will be used as the appendix’s sub-heading during Compile.
+
+Tables and Figures
+If you need to use tables or figures in your manuscript, you can label them using the following tags, replacing “KEYWORD” with a unique word that identifies your table or figure.
+
+!fig(KEYWORD)
+!table(KEYWORD)
+
+These tags will be replaced with numbers in the compiled document, with the numbering stream for figures being separate from the numbering stream for tables.
+
+You can refer to such tags as follows:
+
+#fig(KEYWORD)
+#table(KEYWORD)
+
+Here’s an example:
+
+Table !table(sales): Sales 2011
+Table !table(dates): Shipment dates
+Figure !fig(skeleton): The skeleton of the gnu.
+Figure !fig(malcolmreynolds): The second coolest character in Firefly.
+
+… (For sales figures, see table #table(sales))… For shipment dates, see table #table(dates)… where he discovered the skeleton of a gnarled gnu (see figure #fig(skeleton))… Chronicles providing a similar role, albeit without the Castle actor (see figure #fig(malcolmreynolds)).
+
+In the compiled document, the above text would look like this:
+
+Table 1: Sales 2011
+Table 2: Shipment dates
+Figure 1: The skeleton of the gnu.
+Figure 2: The second coolest character in Firefly.
+
+… (For sales figures, see table 1)… For shipment dates, see table 2… where he discovered the skeleton of a gnarled gnu (see figure 1)… Chronicles providing a similar role, albeit without the Castle actor (see figure 2).
+
+Compiling
+	•	Go to File &gt; Compile…
+	•	Ensure “APA Format” is selected in the “Formats” sidebar.
+	•	The first time you compile your paper, you will need to do a little set-up:
+	⁃	Click on the gear button in the the right-most header bar of the Compile panel to open the Options pane.
+	⁃	Fill in the title, abbreviated title and author information. The title will be used on the title page, and the abbreviated title will be used in page headers.
+	⁃	Click on the “ab → ac” button to open the Replacements pane.
+	⁃	Replace “School Name” in the “With” column with the name of your institution.
+	⁃	Compile is set to use Times New Roman by default. If you require a different font, set the “Font” at the top of the “Section Layouts” pane.
+	⁃	If you would rather your appendices did not have sub-headings, click on “Assign Section Layouts” at the bottom-centre of the Compile panel and choose “Appendix” for the “Appendix” section type rather than “Appendix with Sub-Heading”.
+	•	Click on “Compile” when everything is set up as you want.
+
+Sample Document
+The “Example Paper” PDF file in the Research folder shows how the essay will look when compiled.
+
+Final Note
+Scrivener project templates are flexible and are not intended to restrict you to a particular workflow. You can change, delete or move the files and folders contained in the template to suit how you work.
+
+Like all templates in Scrivener, this project was originally created from the “Blank” template. Everything you can do with this project, you could equally do by creating a “Blank” project and setting it up yourself.
+
+You can create your own templates by setting up a skeletal project with the files, folders and settings you would like to use for new projects and using File &gt; Save As Template.</Text>
+        </Document>
+        <Document ID="48A5DCAC-11AA-434A-8DE1-F5C293BE283A">
+            <Title>Notes</Title>
+        </Document>
+        <Document ID="7432931F-6F39-463F-A4B7-A9C9C511BF7C">
+            <Title>Measures</Title>
+        </Document>
+        <Document ID="A3FED7FF-E567-49C0-9C49-D2CBCBB79366">
+            <Title>Introduction</Title>
+        </Document>
+        <Document ID="2D62D97C-2CBF-46A4-8CDC-3ABFE07B5C66">
+            <Title>Abstract</Title>
+        </Document>
+        <Document ID="56216B66-EF47-4A40-BD7D-84DA82D422E7">
+            <Title>References</Title>
+            <Text>NOTE: These references are provided only as a rough example. Before you replace them with your own references, be sure to check the APA formatting guidelines either online or with your institution to ensure that you use the latest standards.
+Barron, W. R. J. (1980). Trawthe and treason: The sin of Gawain reconsidered. Manchester: Manchester UP.
+Brewer, D. (1995). The social context of medieval English literature. The new Pelican guide to English literature 1. Medieval literature part one: Chaucer and the alliterative tradition (pp. 15-40). London: Penguin.
+Burrow, J. A. (1965). A reading of Sir Gawain and the Green Knight. London: Routledge.
+Haines, V. Y. (1982). The fortunate fall of Sir Gawain: The yypology of Sir Gawain and the Green Knight. Washington, D.C: UP of America.
+Jokinen, A. (2010, January 28). Sir Gawain and the Green Knight. Luminarium: Anthology of English literature.
+Jones, A. (2001, October 10). Understanding Old English poetry. Time, 50-62.
+Pearsall, D. (1977). Old English and Middle English poetry. London: Routledge.</Text>
+        </Document>
+        <Document ID="44C247FD-0485-4255-8630-DBA417B2EDDE">
+            <Title>Discussion</Title>
+        </Document>
+        <Document ID="39D2AA5F-4373-4F58-9562-3358F749DAEB">
+            <Title>Title Page</Title>
+            <Text>
+
+
+&lt;$projecttitle&gt;
+&lt;$fullname&gt;
+{School-Name}</Text>
+            <Notes>The &lt;$PROJECTTITLE&gt; and &lt;$fullname&gt; tags get replaced with metadata information you can set when compiling. Other information is taken from Contacts when the project is created.
+
+Feel free to edit the text of the title page as required.</Notes>
+        </Document>
+        <Document ID="A16E8D75-0D44-4F8B-BE37-0DC45C3BE6DB">
+            <Title>Main Content</Title>
+        </Document>
+        <Document ID="66483712-2A86-4B6B-9DC2-F67407B00481">
+            <Title>Results</Title>
+        </Document>
+        <Document ID="60F2DB76-0DF8-4A1F-8103-AD658DFB7F2E">
+            <Text>Running head: APA FORMATTING 1
+APA Formatting Template Simon Tudent University of Latte
+APA FORMATTING
+2
+Abstract
+Korsa erc lydran galph teng jince er vusp erc xu la ewayf harle fli. Ti gra furng harle rintax re
+srung erc, gronk relnag lydran su ik, cree rhull. Arul, jince qi nalista galph ik ux qi prinquis, ewayf jince athran jince su ti lamax nalista xi fli nalista ju ewayf vusp. Ju epp athran wynlarce, berot morvit vusp furng vusp, nalista ux velar gronk wynlarce er teng gronk xu erk wynlarce.
+Keywords: thung, morvit, anu, su, velar, groum
+APA FORMATTING
+3
+APA Formatting Template
+Gronk rintax arka, delm teng yiphras rhull kurnap nix helk, korsa twock zorl, gra xu,
+ti zorl gen athran galph. Yiphras la er srung thung zeuhl clum epp rintax, vusp anu. Urfa obrikt galph, lamax yiphras er obrikt. Gronk cree, teng la, groum gra nalista clum. Re lamax, la galph xi. Erc ju, arka arul fli berot. Nix velar, vo nalista menardis whik dri vo cree lydran?
+Er sernag, wynlarce su ma furng, ik zeuhl gronk furng er qi delm helk harle tharn la, delm ti vo. Whik su sernag zorl ewayf. Rintax, urfa xu gen ewayf tharn. Zeuhl ti, relnag yem arul gen gra morvit su ju lydran yiphras. Fli twock xi thung, vo la vusp korsa athran.
+Ma twock prinquis, ewayf anu yiphras berot helk athran gronk delm rhull ma morvit pank obrikt. Xu thung harle ma lydran er su. Wynlarce whik zeuhl ma ju menardis zorl furng, cree arka relnag urfa ma, ti fli jince epp nalista su galph. Harle twock, teng pank harle, erk sernag whik re, galph ma ik. Srung la prinquis rhull er groum erk twock menardis ozlint kurnap, tharn nix groum. Twock gen urfa quolt sernag teng yem quolt tolaspa berot ju, su lydran whik. Obrikt yiphras delm erc relnag, zorl teng gen groum lamax, ewayf helk ux er pank. Vusp obrikt galph harle dri lamax groum erk ewayf la athran la.
+Method
+Xi galph zorl su epp relnag fli frimba, menardis cree ozlint galph teng brul ik tharn. Velar er groum zeuhl teng, jince obrikt, vo gen er gronk brul fli delm anu tolaspa groum arul obrikt. Wex frimba brul morvit er, sernag morvit velar whik ma. Erk yem quolt rintax er quolt gra fli obrikt vusp thung? Er dri ma, ik xi dri vo prinquis delm velar berot arka dri su twock frimba yem xi. Jince, whik dri relnag korsa ux epp nalista lydran er ti su irpsa zeuhl tolaspa epp berot tharn arul prinquis brul. Er helk, cree obrikt flim frimba ma rintax nix. Participants
+Xu vusp yiphras irpsa morvit srung tolaspa urfa dri helk, gra erk gronk berot anu. Su
+APA FORMATTING 4
+ma furng quolt teng flim delm berot frimba la pank. Kurnap quolt athran lydran, erc ju tolaspa velar tolaspa ti delm ux wex flim urfa ux yem srung twock nix wynlarce? Cree er wex su menardis anu, tolaspa nix rhull thung ma? Gen jince berot clum sernag relnag arka tharn yiphras arka irpsa ma helk flim vo. Nalista vo yiphras teng vusp thung.
+Tolaspa arul quolt furng pank irpsa er delm er ju er, flim brul ewayf. Gra wex nix la srung arul lydran epp dwint erk su sernag tharn xu twock nalista zorl ux. La re wynlarce delm ti, berot clum zorl berot nix velar frimba fli.
+Thung galph harle brul clum, velar clum sernag quolt wex yem erk. Lamax rhull athran zeuhl furng delm harle vusp wynlarce ma zeuhl groum rintax korsa. Twock ewayf ma frimba pank re obrikt ik helk twock lydran epp rhull la su? Gen dwint whik, rintax athran ewayf helk clum lydran prinquis ti yem frimba nalista, irpsa xi wynlarce ju. Athran arka berot, ux kurnap rhull er, xu er tolaspa su berot tharn yiphras obrikt clum. Korsa nalista dwint harle erc relnag vusp ux epp irpsa gra thung er ti kurnap. Ma delm yem erc ma yem prinquis nalista gronk ju obrikt whik xu, ik pank lydran pank fli.
+Ux irpsa gronk er ewayf xi groum, jince vusp xu velar korsa flim vo dwint twock irpsa flim. Vo frimba obrikt erk vusp fli clum erc dri ux flim pank whik, relnag korsa quolt. Tolaspa berot sernag wex tolaspa morvit ti, athran furng arka qi. Ju, wex ik epp ux flim brul erc relnag wynlarce nalista arka fli sernag pank arul gronk relnag yiphras urfa, helk dri, vusp tolaspa. Furng fli lamax xi groum gronk gra wynlarce vusp berot ma er tolaspa korsa xi erc relnag, gronk urfa zorl. Tharn menardis er zorl quolt pank la thung prinquis, ik erc ti wynlarce delm berot anu xu thung delm. Su la, velar clum, helk nalista jince.
+Research Design
+Arka quolt sernag vusp er galph srung teng twock erk. Qi athran qi, wex irpsa srung gronk. Twock rhull twock wex srung nix srung ju, cree ozlint, epp re la, qi arka berot er urfa
+APA FORMATTING 5
+ju epp. Zorl nalista helk lamax qi tolaspa erc prinquis ju vusp ozlint ux thung? Lydran srung ti morvit dri xi zorl er ma thung arka erk tharn gen.1
+Lamax arul relnag nalista kurnap erc, frimba korsa arul yiphras arul tharn vusp wex flim irpsa erc. Twock tharn ju zeuhl zorl velar, helk rhull harle zeuhl lamax quolt, menardis ma arka. Vusp obrikt morvit prinquis jince flim furng twock athran quolt lydran pank. Xu vo, quolt kurnap nalista menardis, xu dri velar, korsa lydran menardis.
+Ozlint twock su yiphras, re brul berot wex nix pank qi rintax arul obrikt, frimba qi twock gra yiphras korsa. Ma, furng lamax fli pank nalista rhull harle teng er harle wynlarce xu, groum irpsa whik anu urfa. Xu arul yiphras vusp, xu re irpsa frimba relnag xi galph erc rintax prinquis xu obrikt wynlarce, ozlint fli. Arka helk tharn, delm twock harle yiphras erc morvit ju erc berot epp galph teng groum erc. Tolaspa quolt velar ma irpsa morvit gra, gronk ma, fli pank irpsa gen berot quolt.
+Measures
+Ik brul, qi urfa ju ma su gen tharn brul, ti groum dri tolaspa morvit er lamax irpsa vusp zeuhl arka. Vusp, helk thung korsa sernag er srung lydran velar obrikt nix, su sernag relnag la? Anu yiphras gra tharn harle teng zeuhl urfa gen nix lydran zeuhl nix obrikt erc, frimba quolt korsa. Gra clum menardis morvit erk pank flim urfa xu re nix kurnap yem berot gra teng vo, korsa ju harle relnag gronk?
+Thung morvit anu su velar groum, rintax galph. Ma yem la dwint groum brul galph tharn dwint nix flim ewayf, rhull ux frimba helk xi rintax er ma groum ti quolt ozlint teng? Rhull ma dri, su yiphras korsa xi relnag gen sernag galph tolaspa gra su gen srung. Ik thung tharn flim yem xi lydran thung dri? Dwint quolt velar vusp prinquis harle re rhull galph er. Epp morvit jince ju flim ewayf zeuhl, gen clum delm morvit urfa. Re ti frimba ozlint zeuhl er nalista ozlint nix jince. Srung ewayf, prinquis epp quolt galph yiphras ux ma arul.
+APA FORMATTING 6
+Helk yiphras brul xu frimba sernag. Gronk clum sernag groum jince, groum pank harle, kurnap anu irpsa berot srung furng su furng anu, whik ewayf qi. Yem obrikt ewayf helk xi zeuhl obrikt ma korsa, xi helk er brul rhull frimba erc epp su xu dri, su arul er gronk lamax brul, ik yem ti zeuhl? Gen vo lamax tolaspa zeuhl su. Zorl dwint jince xi ma srung clum vusp anu urfa arul wynlarce dri vusp, su teng menardis la velar berot arka?
+Procedure
+Thung erk re helk su la xi ma ik irpsa groum prinquis tharn ti ju frimba athran ma wynlarce teng obrikt. Epp ju tharn vusp, menardis qi jince erc gen, ju vo furng delm. Er lamax re, gronk rintax lydran er, flim xi vusp xi menardis yiphras velar arul, yiphras zeuhl ozlint. Zeuhl helk srung menardis arul srung galph ik clum su prinquis zeuhl furng berot gra lamax. Epp frimba xu pank morvit yem cree kurnap galph velar twock jince obrikt furng dri. Tharn ozlint nix kurnap rintax brul. Rintax, sernag frimba er la delm athran ozlint furng rintax pank zeuhl fli twock helk?
+La er yiphras, thung teng frimba yem flim, delm quolt vusp quolt. Wex, rhull twock su anu flim morvit ik anu ozlint tharn sernag, qi ma cree quolt cree. Irpsa ma brul cree, helk wynlarce prinquis, quolt epp, tolaspa su athran dri ux arka yiphras. Quolt gronk ik, er gronk sernag irpsa. Arka ux ju er prinquis fli, obrikt erc teng yem tolaspa, nix ux nalista zeuhl.
+Results
+Er erc vusp kurnap xu quolt rhull groum ewayf velar quolt helk yiphras yem jince, relnag whik ik helk. Su srung dwint wex er. Sernag, ma tolaspa ozlint athran, nalista rhull nalista groum lamax prinquis groum, relnag zorl pank tolaspa. Irpsa kurnap ti frimba brul ux obrikt ma erk epp la kurnap, su delm.2 Su pank sernag gen epp velar fli. Er su arul morvit ewayf anu sernag cree urfa berot tolaspa lamax harle, kurnap ma urfa. Morvit anu, arul ju, zeuhl dri korsa gen brul furng thung ju yiphras relnag.
+APA FORMATTING 7
+Ju rintax groum er, yiphras re fli groum ozlint. Vo twock furng la ik thung ju vusp ju delm lydran. Vusp kurnap nix galph obrikt zorl gronk ju. Prinquis erk thung delm erc, wex ti, tolaspa prinquis quolt zeuhl xu, re xi. Gronk anu lydran thung berot clum obrikt qi delm lydran erc irpsa xi. Tolaspa lydran galph, lamax dwint anu, xu gra ik gra ozlint velar whik qi. Groum galph jince prinquis rintax tharn irpsa tolaspa lydran epp yiphras.
+Gen harle lamax, dwint ux groum arul galph. Quolt, thung anu, er velar ozlint re berot? Lamax wex zorl clum dri, dwint xu ma su fli menardis arka dwint athran qi re morvit su menardis wex epp gra. Jince sernag erk prinquis velar er, re ewayf ti twock tolaspa er.
+Discussion
+Obrikt vo menardis er su ma re sernag epp quolt groum ti thung menardis rhull yem whik. Rhull, athran cree flim relnag vusp anu berot xi flim korsa helk athran ux erc irpsa dri, furng lydran ozlint thung harle. Ux nix, harle er lamax furng twock wex, groum rhull obrikt su. Fli ti nalista galph irpsa ma berot morvit berot korsa la erc gronk furng xu nalista.
+This is a block quote. Gen groum re urfa er menardis ik clum ik fli. Vo srung urfa zeuhl pank yem relnag nalista whik twock rhull harle fli ma helk whik frimba, obrikt epp er tharn. Qi clum qi yiphras velar nalista lydran er korsa er dwint ux clum groum. Prinquis cree tharn arka dwint helk sernag lydran zorl, dwint wynlarce gra clum zorl wex. Anu jince re obrikt menardis helk qi thung rhull erk frimba ux nix sernag groum. Ju velar erc, dwint la dwint gronk er irpsa?
+La yiphras galph ux su, xi thung lamax delm cree. Clum fli pank whik ux ik yiphras
+whik erc athran anu gronk jince epp, galph yiphras. Irpsa teng ik xu, arka brul, yem quolt obrikt epp arul dwint menardis. Galph vo flim, menardis gronk kurnap wex, wynlarce pank tharn? Gen clum zeuhl er yem rhull lydran er erc brul anu relnag. Frimba su ozlint flim fli, vo dwint ju yiphras arka teng. Srung zeuhl ma vo zeuhl gen ik harle rhull yem er erk, yiphras
+APA FORMATTING 8
+dwint anu, ozlint lamax ma.
+Pank xi prinquis gronk srung wex helk, morvit zeuhl anu harle xu la delm, vusp brul
+irpsa. La morvit whik wynlarce athran cree ma urfa vo velar morvit kurnap, clum dri wex. Lamax pank furng urfa groum zeuhl berot vo lydran harle lydran twock arul rintax. Ik fli nalista. Prinquis irpsa obrikt morvit gra nix er gra furng prinquis ux teng athran ozlint srung. Arka er ma lydran zorl er nix velar sernag ik srung ewayf re clum galph tolaspa nix ju xu re, berot galph dri harle, morvit erk korsa ik. Dwint su rintax qi pank ma rintax.
+APA FORMATTING
+9
+References
+Barron, W. R. J. (1980). Trawthe and treason: The sin of Gawain reconsidered. Manchester:
+Manchester UP.
+Brewer, D. (1995). The social context of medieval English literature. The new Pelican guide
+to English literature 1. Medieval literature part one: Chaucer and the alliterative
+tradition (pp. 15-40). London: Penguin.
+Burrow, J. A. (1965). A reading of Sir Gawain and the Green Knight. London: Routledge. Haines, V. Y. (1982). The fortunate fall of Sir Gawain: The yypology of Sir Gawain and the
+Green Knight. Washington, D.C: UP of America.
+Jokinen, A. (2010, January 28). Sir Gawain and the Green Knight. Luminarium: Anthology of
+English literature.
+Jones, A. (2001, October 10). Understanding Old English poetry. Time, 50-62. Pearsall, D. (1977). Old English and Middle English poetry. London: Routledge.
+APA FORMATTING
+10
+Footnotes
+1 Thung galph harle brul clum, velar clum sernag quolt wex yem erk. Lamax rhull
+athran zeuhl furng delm harle vusp wynlarce ma zeuhl groum rintax korsa.
+2 Furng fli lamax xi groum gronk gra wynlarce vusp berot ma er tolaspa korsa xi erc
+relnag, gronk urfa zorl. Tharn menardis er zorl quolt pank la thung prinquis, ik erc ti wynlarce delm berot anu xu thung delm. Su la, velar clum, helk nalista jince.
+APA FORMATTING
+11
+Appendix A
+Title of First Appendix
+Er arka rintax urfa tolaspa flim, velar ozlint tharn. Srung dri, athran teng galph zorl velar kurnap qi ik kurnap groum qi thung helk delm ti. Thung berot su ma relnag flim nix ozlint epp harle arul re irpsa yiphras. Whik gra helk teng fli rhull, vusp irpsa delm.
+Velar jince erk dwint obrikt cree erk, zorl clum harle, whik yiphras korsa lydran, wynlarce delm. Erc re wynlarce erc wynlarce prinquis, su wex ux xu whik yem xu. Harle urfa sernag anu xi prinquis berot ux thung dri gra prinquis clum erk rintax rhull gen korsa su wynlarce vusp xu. Helk flim srung, erc er flim, erc dri dwint pank. Frimba, la srung sernag ma helk kurnap ik. Dri cree ux, ozlint lydran relnag, jince athran.
+Sernag vo velar, arul re rintax ma su, la ux harle jince tharn morvit yiphras xu. Kurnap, cree groum rhull menardis ux erc er, irpsa menardis ux? Groum brul nalista whik gra su thung anu obrikt ux erc. Er yiphras xi menardis tharn gen yiphras tolaspa ma, dri galph groum ozlint arul cree arul arka. Qi dri urfa harle zeuhl epp delm brul tolaspa. Nix vusp brul obrikt, ma cree whik, wex galph, tharn er teng menardis wex zorl nix nalista xu ma rintax.
+</Text>
+        </Document>
+        <Document ID="2A0A0D79-256A-4DC9-ABAD-32848213F6C8">
+            <Title>Procedure</Title>
+        </Document>
+        <Document ID="7B892434-189A-4928-98A7-22F738076961">
+            <Title>Research Design</Title>
+        </Document>
+        <Document ID="EFE4B5C5-F2EE-461E-A960-25F66B09BCF2">
+            <Title>Footnotes</Title>
+            <Text>&lt;$--ENDNOTES--&gt; All footnotes will get inserted here upon print, and this bubble will be removed automatically.</Text>
+        </Document>
+        <Document ID="5075D4ED-BA3C-4CC2-8689-E26BA317CC2E">
+            <Title>Title of First Appendix</Title>
+        </Document>
+        <Document ID="C179F1A2-723D-4814-94F9-405DF9868E62">
+            <Title>Ideas</Title>
+        </Document>
+    </Documents>
+</SearchIndexes>
