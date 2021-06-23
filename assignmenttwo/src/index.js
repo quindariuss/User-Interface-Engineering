@@ -9,6 +9,11 @@ import {
   Grid,
   SimpleGrid,
   Flex,
+  Tabs,
+  Tab,
+  TabList,
+  TabPanels,
+  TabPanel,
   HStack,
   VStack,
   Checkbox,
@@ -122,6 +127,7 @@ function App() {
       cost: 10.99,
     },
   ];
+
   const [tacosState, settacosState] = useState(
     new Array(tacos.length).fill(false)
   );
@@ -130,13 +136,65 @@ function App() {
   );
   const [total, setTotal] = useState(0);
 
-  const handleOnChange = (position) => {
+  const handleTacoChange = (position) => {
     const updatedCheckedState = tacosState.map((item, index) =>
       index === position ? !item : item
     );
     console.log("hello");
     settacosState(updatedCheckedState);
   };
+  const handleMargChange = (position) => {
+    const updatedCheckedState = margsState.map((item, index) =>
+      index === position ? !item : item
+    );
+    console.log("hello");
+    setmargsState(updatedCheckedState);
+  };
+  function Tacos() {
+    return (
+      <>
+        {tacos.map((taco, index) => (
+          <>
+            <HStack>
+              <Tooltip label={taco.description}>
+                <Text>{taco.name}</Text>
+              </Tooltip>
+              <Spacer />
+
+              <input
+                checked={tacosState[index]}
+                value={taco.selected}
+                type="checkbox"
+                onChange={() => handleTacoChange(index)}
+              ></input>
+            </HStack>
+          </>
+        ))}
+      </>
+    );
+  }
+  function Margs() {
+    return (
+      <>
+        {margs.map((marg, index) => (
+          <>
+            <HStack>
+              <Tooltip label={marg.description}>
+                <Text>{marg.name}</Text>
+              </Tooltip>
+              <Spacer />
+
+              <input
+                checked={margsState[index]}
+                type="checkbox"
+                onChange={() => handleMargChange(index)}
+              ></input>
+            </HStack>
+          </>
+        ))}
+      </>
+    );
+  }
 
   function Reciept() {
     return (
@@ -173,6 +231,25 @@ function App() {
             })}
           </VStack>
         </HStack>
+        <HStack>
+          <VStack textAlign="end">
+            <Text>Margaritas</Text>
+            {margsState.map((item, index) => {
+              if (item === true) {
+                return <Text>{margs[index].name}</Text>;
+              }
+            })}
+          </VStack>
+          <Spacer />
+          <VStack>
+            <Text>Cost</Text>
+            {margsState.map((item, index) => {
+              if (item === true) {
+                return <Text>{margs[index].cost}</Text>;
+              }
+            })}
+          </VStack>
+        </HStack>
         <Divider />
         <HStack>
           <Text>Total</Text>
@@ -203,25 +280,26 @@ function App() {
             onChange={(e) => setName(e.target.value)}
             type="text"
           />
-          <SimpleGrid spacing="10px" minChildWidth="200px">
-            {tacos.map((taco, index) => (
-              <>
-                <HStack>
-                  <Tooltip label={taco.description}>
-                    <Text>{taco.name}</Text>
-                  </Tooltip>
-                  <Spacer />
+          <SimpleGrid spacing="10px" minChildWidth="200px"></SimpleGrid>
+          <Tabs>
+            <TabList>
+              <Tab>Tacos</Tab>
+              <Tab>Margaritas</Tab>
+              <Tab>Desert</Tab>
+            </TabList>
 
-                  <input
-                    checked={tacosState[index]}
-                    value={taco.selected}
-                    type="checkbox"
-                    onChange={() => handleOnChange(index)}
-                  ></input>
-                </HStack>
-              </>
-            ))}
-          </SimpleGrid>
+            <TabPanels>
+              <TabPanel>
+                <Tacos />
+              </TabPanel>
+              <TabPanel>
+                <Margs />
+              </TabPanel>
+              <TabPanel>
+                <p>three!</p>
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
         </Box>
         <Reciept />
       </SimpleGrid>
