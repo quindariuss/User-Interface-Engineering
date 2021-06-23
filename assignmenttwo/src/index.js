@@ -11,8 +11,10 @@ import {
   Flex,
   HStack,
   VStack,
+  Checkbox,
   GridItem,
   Input,
+  Tooltip,
   Divider,
   Stack,
   Spacer,
@@ -31,50 +33,69 @@ function App() {
       description:
         "marinated & sauteéd pork, pineapple, chihuahua cheese, onion, cilantro, chile de arbol salsa",
       selected: false,
+      cost: 10.99,
     },
     {
       name: "Birria",
       description:
         "braised lamb leg, fundido cheese, cilantro, onion, crispy grilled adobo tortilla, watercress salad, habanero salsa",
       selected: false,
+      cost: 10.99,
     },
     {
       name: "Coliflor o Portobello ",
       description:
         "cumin & turmeric roasted cauliflower OR cilantro grilled portobello mushroom, pumpkin seed pesto, smoked cashew salsa",
-      selected: false,
+      selected: true,
+      cost: 10.99,
     },
     {
       name: "Pollo",
       description: "chipotle chicken, diced onion, cilantro, mexicana salsa",
       selected: false,
+      cost: 10.99,
     },
     {
       name: "Carne Asada",
       description:
         "marinated & grilled all-natural steak, diced onion, cilantro, guajillo salsa",
       selected: false,
+      cost: 10.99,
     },
     {
       name: "Camarón o Pescado",
       description:
         "fried shrimp or grouper, poblano slaw, chipotle mayo, cruda tomatillo salsa",
       selected: false,
+      cost: 10.99,
     },
     {
       name: "Pescado a la Parrilla",
       description:
         "citrus-grilled catch of the day, charred pico de gallo, avocado, cruda tomatillo salsa",
       selected: false,
+      cost: 10.99,
     },
   ];
+  const [tacosState, settacosState] = useState(
+    new Array(tacos.length).fill(false)
+  );
+  const [total, setTotal] = useState(0);
+
+  const handleOnChange = (position) => {
+    const updatedCheckedState = tacosState.map((item, index) =>
+      index === position ? !item : item
+    );
+    console.log("hello");
+    settacosState(updatedCheckedState);
+  };
 
   return (
     <div style={{ padding: "10px" }}>
       <Flex marginBottom="5">
         <Box w="100%" p="4" bg="red.400">
           <Center>
-            <Heading>Pure Taqueria</Heading>
+            <Heading>Unpure Taqueria</Heading>
           </Center>
         </Box>
       </Flex>
@@ -89,12 +110,30 @@ function App() {
             onChange={(e) => setName(e.target.value)}
             type="text"
           />
-          <SimpleGrid spacing="10px" minChildWidth="100px"></SimpleGrid>
+          <SimpleGrid spacing="10px" minChildWidth="200px">
+            {tacos.map((taco, index) => (
+              <>
+                <HStack>
+                  <Tooltip label={taco.description}>
+                    <Text>{taco.name}</Text>
+                  </Tooltip>
+                  <Spacer />
+
+                  <input
+                    checked={tacosState[index]}
+                    value={taco.selected}
+                    type="checkbox"
+                    onChange={() => handleOnChange(index)}
+                  ></input>
+                </HStack>
+              </>
+            ))}
+          </SimpleGrid>
         </Box>
         <Box bg="tomato" p="4">
           <Center m="5">
             <VStack>
-              <Heading size="md">Pure Taqueria Receipt</Heading>
+              <Heading size="md">Unpure Taqueria Receipt</Heading>
               <Divider w="100%" />
               <Text>103 Roswell Street</Text>
               <Text>Alpharetta, GA</Text>
@@ -106,9 +145,23 @@ function App() {
           </Center>
           <Divider />
           <HStack>
-            <Text>Item</Text>
+            <VStack textAlign="end">
+              <Text>Taco</Text>
+              {tacosState.map((item, index) => {
+                if (item === true) {
+                  return <Text>{tacos[index].name}</Text>;
+                }
+              })}
+            </VStack>
             <Spacer />
-            <Text>Cost </Text>
+            <VStack>
+              <Text>Cost</Text>
+              {tacosState.map((item, index) => {
+                if (item === true) {
+                  return <Text>{tacos[index].cost}</Text>;
+                }
+              })}
+            </VStack>
           </HStack>
           <Divider />
           <HStack>
@@ -120,7 +173,7 @@ function App() {
       </SimpleGrid>
       <Box w="100%" p="4" bg="red.400">
         <Center>
-          <Text>Pure Taqueria est. 1921</Text>
+          <Text>Unpure Taqueria est. 1921</Text>
         </Center>
       </Box>
     </div>
