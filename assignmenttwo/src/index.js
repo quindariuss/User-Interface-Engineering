@@ -25,6 +25,50 @@ import {
 
 function App() {
   const [name, setName] = useState("");
+  var tacos = [
+    {
+      name: "Puerco al Pastor",
+      description:
+        "marinated & sauteéd pork, pineapple, chihuahua cheese, onion, cilantro, chile de arbol salsa",
+      selected: false,
+    },
+    {
+      name: "Birria",
+      description:
+        "braised lamb leg, fundido cheese, cilantro, onion, crispy grilled adobo tortilla, watercress salad, habanero salsa",
+      selected: false,
+    },
+    {
+      name: "Coliflor o Portobello ",
+      description:
+        "cumin & turmeric roasted cauliflower OR cilantro grilled portobello mushroom, pumpkin seed pesto, smoked cashew salsa",
+      selected: false,
+    },
+    {
+      name: "Pollo",
+      description: "chipotle chicken, diced onion, cilantro, mexicana salsa",
+      selected: false,
+    },
+    {
+      name: "Carne Asada",
+      description:
+        "marinated & grilled all-natural steak, diced onion, cilantro, guajillo salsa",
+      selected: false,
+    },
+    {
+      name: "Camarón o Pescado",
+      description:
+        "fried shrimp or grouper, poblano slaw, chipotle mayo, cruda tomatillo salsa",
+      selected: false,
+    },
+    {
+      name: "Pescado a la Parrilla",
+      description:
+        "citrus-grilled catch of the day, charred pico de gallo, avocado, cruda tomatillo salsa",
+      selected: false,
+    },
+  ];
+
   return (
     <div style={{ padding: "10px" }}>
       <Flex marginBottom="5">
@@ -45,6 +89,7 @@ function App() {
             onChange={(e) => setName(e.target.value)}
             type="text"
           />
+          <SimpleGrid spacing="10px" minChildWidth="100px"></SimpleGrid>
         </Box>
         <Box bg="tomato" p="4">
           <Center m="5">
