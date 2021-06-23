@@ -27,6 +27,51 @@ import {
 
 function App() {
   const [name, setName] = useState("");
+  var margs = [
+    {
+      name: "PURE Double Barrel Margarita",
+      description:
+        "Herradura double barrel reposado, lime, agave nectar, Combier orange liqueur",
+      cost: 9.99,
+    },
+    {
+      name: "Skinny Margarita",
+      description: "Lunazul silver tequila, fresh squeezed limes, agave nectar",
+      cost: 9.99,
+    },
+    {
+      name: "Manarita",
+      description:
+        "our skinny margarita fattened up with a Gran Gala & reposado floater",
+      cost: 9.99,
+    },
+    {
+      name: "Pepino Diablo",
+      description: "Tanteo jalapeño tequila, cucumber, cilantro, lime",
+      cost: 9.99,
+    },
+    {
+      name: "Skinny Love Margarita",
+      description:
+        "Lunazul silver tequila, lime, agave nectar, fresh strawberry, muddled basil",
+      cost: 9.99,
+    },
+    {
+      name: "Pomegrantate Skinny Margarita",
+      description: "Skinny margarita, PAMA pomegranate liqueur",
+      cost: 9.99,
+    },
+    {
+      name: "Prickly Pear Margarita",
+      description: "Silver tequila, triple sec, lime, prickly pear puree",
+      cost: 9.99,
+    },
+    {
+      name: "Pure Margarita",
+      description: "rocks or frozen",
+      cost: 6.99,
+    },
+  ];
   var tacos = [
     {
       name: "Puerco al Pastor",
@@ -80,6 +125,9 @@ function App() {
   const [tacosState, settacosState] = useState(
     new Array(tacos.length).fill(false)
   );
+  const [margsState, setmargsState] = useState(
+    new Array(margs.length).fill(false)
+  );
   const [total, setTotal] = useState(0);
 
   const handleOnChange = (position) => {
@@ -89,6 +137,51 @@ function App() {
     console.log("hello");
     settacosState(updatedCheckedState);
   };
+
+  function Reciept() {
+    return (
+      <Box bg="tomato" p="4">
+        <Center m="5">
+          <VStack>
+            <Heading size="md">Unpure Taqueria Receipt</Heading>
+            <Divider w="100%" />
+            <Text>103 Roswell Street</Text>
+            <Text>Alpharetta, GA</Text>
+            <Text>30009</Text>
+            <Text>(678)-240-0023</Text>
+            <Divider />
+            <Text>Customer Name: {name}</Text>
+          </VStack>
+        </Center>
+        <Divider />
+        <HStack>
+          <VStack textAlign="end">
+            <Text>Taco</Text>
+            {tacosState.map((item, index) => {
+              if (item === true) {
+                return <Text>{tacos[index].name}</Text>;
+              }
+            })}
+          </VStack>
+          <Spacer />
+          <VStack>
+            <Text>Cost</Text>
+            {tacosState.map((item, index) => {
+              if (item === true) {
+                return <Text>{tacos[index].cost}</Text>;
+              }
+            })}
+          </VStack>
+        </HStack>
+        <Divider />
+        <HStack>
+          <Text>Total</Text>
+          <Spacer />
+          <Text>Cost</Text>
+        </HStack>
+      </Box>
+    );
+  }
 
   return (
     <div style={{ padding: "10px" }}>
@@ -130,46 +223,7 @@ function App() {
             ))}
           </SimpleGrid>
         </Box>
-        <Box bg="tomato" p="4">
-          <Center m="5">
-            <VStack>
-              <Heading size="md">Unpure Taqueria Receipt</Heading>
-              <Divider w="100%" />
-              <Text>103 Roswell Street</Text>
-              <Text>Alpharetta, GA</Text>
-              <Text>30009</Text>
-              <Text>(678)-240-0023</Text>
-              <Divider />
-              <Text>Customer Name: {name}</Text>
-            </VStack>
-          </Center>
-          <Divider />
-          <HStack>
-            <VStack textAlign="end">
-              <Text>Taco</Text>
-              {tacosState.map((item, index) => {
-                if (item === true) {
-                  return <Text>{tacos[index].name}</Text>;
-                }
-              })}
-            </VStack>
-            <Spacer />
-            <VStack>
-              <Text>Cost</Text>
-              {tacosState.map((item, index) => {
-                if (item === true) {
-                  return <Text>{tacos[index].cost}</Text>;
-                }
-              })}
-            </VStack>
-          </HStack>
-          <Divider />
-          <HStack>
-            <Text>Total</Text>
-            <Spacer />
-            <Text>Cost</Text>
-          </HStack>
-        </Box>
+        <Reciept />
       </SimpleGrid>
       <Box w="100%" p="4" bg="red.400">
         <Center>
