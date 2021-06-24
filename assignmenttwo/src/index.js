@@ -332,8 +332,7 @@ function App() {
         <HStack>
           <Text>Total</Text>
           <Spacer />
-          <Text>Cost</Text>
-          <Text>{total}</Text>
+          <Text>${total}</Text>
         </HStack>
       </Box>
     );
@@ -425,6 +424,7 @@ function App() {
         </Box>
         <Reciept />
       </SimpleGrid>
+      <Box boxSize="md" />
       <Box w="100%" p="4">
         <Center>
           <Text>Unpure Taqueria est. 1921</Text>
@@ -437,7 +437,7 @@ function App() {
 reactdom.render(
   <ChakraProvider>
     <Box
-      h="100%"
+      minHeight="100%"
       bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
     >
       <App />
