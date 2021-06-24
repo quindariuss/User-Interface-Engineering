@@ -187,6 +187,18 @@ function App() {
 
     setdessertsState(updatedCheckedState);
   };
+  const [value, setValue] = useState("Togo");
+  function ToGo() {
+    return (
+      <RadioGroup onChange={setValue} value={value}>
+        <Stack direction="row">
+          <Radio value="Togo">Togo</Radio>
+          <Radio value="Dine In">Dine In</Radio>
+          <Radio value="Take Out">Take Out</Radio>
+        </Stack>
+      </RadioGroup>
+    );
+  }
   function Tacos() {
     return (
       <>
@@ -197,7 +209,6 @@ function App() {
                 <Text>{taco.name}</Text>
               </Tooltip>
               <Spacer />
-
               <input
                 checked={tacosState[index]}
                 value={taco.selected}
@@ -260,7 +271,7 @@ function App() {
       <Box bg="white" rounded="2xl" p="4">
         <Center m="5">
           <VStack>
-            <Heading size="md">Unpure Taqueria Receipt</Heading>
+            <Heading size="md">Unpure Taqueria Receipt * {value} *</Heading>
             <Divider w="100%" />
             <Text>103 Roswell Street</Text>
             <Text>Alpharetta, GA</Text>
@@ -401,6 +412,7 @@ function App() {
               Order!
             </Button>
           </HStack>
+          <ToGo />
           <SimpleGrid spacing="10px" minChildWidth="200px"></SimpleGrid>
           <Tabs>
             <TabList>
