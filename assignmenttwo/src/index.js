@@ -1,16 +1,19 @@
 import react from "react";
 import { useState } from "react";
+import logo from "./logo.png";
 import reactdom from "react-dom";
 import {
   ChakraProvider,
   Heading,
   Text,
+  Image,
   Link,
   Grid,
   SimpleGrid,
   Flex,
   Tabs,
   Tab,
+  Button,
   TabList,
   TabPanels,
   TabPanel,
@@ -32,6 +35,30 @@ import {
 
 function App() {
   const [name, setName] = useState("");
+  var desserts = [
+    {
+      name: "Pastel de Tres Leches",
+      description:
+        "layered cake with 'three milks', mascarpone cream, housemade vanilla rum, strawberries, toasted coconut, sugared almonds",
+      cost: 10.99,
+    },
+    {
+      name: "Churros y Chocolate or Sopapillas y Chocolate",
+      description:
+        "traditional mexican doughnuts, cinnamon-sugar, chocolate pudding",
+      cost: 5.99,
+    },
+    {
+      name: "Platanos Fritos",
+      description: "fried plantains, sweetened cream, powdered sugar",
+      cost: 2.99,
+    },
+    {
+      name: "Pay de Limón",
+      description: "key lime pie, strawberries, fresh cream",
+      cost: 5.99,
+    },
+  ];
   var margs = [
     {
       name: "PURE Double Barrel Margarita",
@@ -131,6 +158,9 @@ function App() {
   const [tacosState, settacosState] = useState(
     new Array(tacos.length).fill(false)
   );
+  const [dessertsState, setdessertsState] = useState(
+    new Array(desserts.length).fill(false)
+  );
   const [margsState, setmargsState] = useState(
     new Array(margs.length).fill(false)
   );
@@ -149,6 +179,13 @@ function App() {
     );
     console.log("hello");
     setmargsState(updatedCheckedState);
+  };
+  const handleDessChange = (position) => {
+    const updatedCheckedState = dessertsState.map((item, index) =>
+      index === position ? !item : item
+    );
+    console.log("hello");
+    setdessertsState(updatedCheckedState);
   };
   function Tacos() {
     return (
@@ -188,6 +225,28 @@ function App() {
                 checked={margsState[index]}
                 type="checkbox"
                 onChange={() => handleMargChange(index)}
+              ></input>
+            </HStack>
+          </>
+        ))}
+      </>
+    );
+  }
+  function Desserts() {
+    return (
+      <>
+        {desserts.map((marg, index) => (
+          <>
+            <HStack>
+              <Tooltip label={marg.description}>
+                <Text>{marg.name}</Text>
+              </Tooltip>
+              <Spacer />
+
+              <input
+                checked={dessertsState[index]}
+                type="checkbox"
+                onChange={() => handleDessChange(index)}
               ></input>
             </HStack>
           </>
@@ -250,6 +309,25 @@ function App() {
             })}
           </VStack>
         </HStack>
+        <HStack>
+          <VStack textAlign="end">
+            <Text>Desserts</Text>
+            {dessertsState.map((item, index) => {
+              if (item === true) {
+                return <Text>{desserts[index].name}</Text>;
+              }
+            })}
+          </VStack>
+          <Spacer />
+          <VStack>
+            <Text>Cost</Text>
+            {margsState.map((item, index) => {
+              if (item === true) {
+                return <Text>{desserts[index].cost}</Text>;
+              }
+            })}
+          </VStack>
+        </HStack>
         <Divider />
         <HStack>
           <Text>Total</Text>
@@ -259,13 +337,18 @@ function App() {
       </Box>
     );
   }
+  function lasers() {
+    alert("Lasers");
+  }
 
   return (
     <div style={{ padding: "10px" }}>
       <Flex marginBottom="5">
         <Box w="100%" p="4" bg="red.400">
           <Center>
-            <Heading>Unpure Taqueria</Heading>
+            <Heading>Pure Taqueria</Heading>
+            <Spacer />
+            <Image boxSize="3xs" fit="scale-down" src={logo} />
           </Center>
         </Box>
       </Flex>
@@ -275,11 +358,21 @@ function App() {
             <Heading size="md">Order Menu</Heading>
           </Center>
           <FormLabel>Name for Order:</FormLabel>
-          <Input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-          />
+          <HStack>
+            <Input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+            />
+            <Button
+              type="button"
+              onClick={() =>
+                alert("Hey" + name + ", your order will be ready soon.")
+              }
+            >
+              Order!
+            </Button>
+          </HStack>
           <SimpleGrid spacing="10px" minChildWidth="200px"></SimpleGrid>
           <Tabs>
             <TabList>
@@ -296,7 +389,7 @@ function App() {
                 <Margs />
               </TabPanel>
               <TabPanel>
-                <p>three!</p>
+                <Desserts />
               </TabPanel>
             </TabPanels>
           </Tabs>
