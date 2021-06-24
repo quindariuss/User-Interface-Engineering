@@ -1,5 +1,5 @@
 import react from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import logo from "./logo.png";
 import reactdom from "react-dom";
 import {
@@ -170,21 +170,21 @@ function App() {
     const updatedCheckedState = tacosState.map((item, index) =>
       index === position ? !item : item
     );
-    console.log("hello");
+
     settacosState(updatedCheckedState);
   };
   const handleMargChange = (position) => {
     const updatedCheckedState = margsState.map((item, index) =>
       index === position ? !item : item
     );
-    console.log("hello");
+
     setmargsState(updatedCheckedState);
   };
   const handleDessChange = (position) => {
     const updatedCheckedState = dessertsState.map((item, index) =>
       index === position ? !item : item
     );
-    console.log("hello");
+
     setdessertsState(updatedCheckedState);
   };
   function Tacos() {
@@ -257,7 +257,7 @@ function App() {
 
   function Reciept() {
     return (
-      <Box bg="tomato" p="4">
+      <Box bg="white" rounded="2xl" p="4">
         <Center m="5">
           <VStack>
             <Heading size="md">Unpure Taqueria Receipt</Heading>
@@ -285,7 +285,7 @@ function App() {
             <Text>Cost</Text>
             {tacosState.map((item, index) => {
               if (item === true) {
-                return <Text>{tacos[index].cost}</Text>;
+                return <Text>${tacos[index].cost}</Text>;
               }
             })}
           </VStack>
@@ -304,7 +304,7 @@ function App() {
             <Text>Cost</Text>
             {margsState.map((item, index) => {
               if (item === true) {
-                return <Text>{margs[index].cost}</Text>;
+                return <Text>${margs[index].cost}</Text>;
               }
             })}
           </VStack>
@@ -323,7 +323,7 @@ function App() {
             <Text>Cost</Text>
             {margsState.map((item, index) => {
               if (item === true) {
-                return <Text>{desserts[index].cost}</Text>;
+                return <Text>${desserts[index].cost}</Text>;
               }
             })}
           </VStack>
@@ -333,18 +333,42 @@ function App() {
           <Text>Total</Text>
           <Spacer />
           <Text>Cost</Text>
+          <Text>{total}</Text>
         </HStack>
       </Box>
     );
   }
-  function lasers() {
-    alert("Lasers");
-  }
+
+  useEffect(() => {
+    const totalTacoPrice = tacosState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        console.log(total);
+        return sum + tacos[index].cost;
+      }
+      return sum;
+    }, 0);
+    const totalMargPrice = margsState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        console.log(total);
+        return sum + margs[index].cost;
+      }
+      return sum;
+    }, 0);
+    const totalDessPrice = dessertsState.reduce((sum, currentState, index) => {
+      if (currentState === true) {
+        console.log(total);
+        return sum + desserts[index].cost;
+      }
+      return sum;
+    }, 0);
+
+    setTotal(totalTacoPrice + totalMargPrice + totalDessPrice);
+  });
 
   return (
     <div style={{ padding: "10px" }}>
       <Flex marginBottom="5">
-        <Box w="100%" p="4" bg="red.400">
+        <Box w="100%" p="4">
           <Center>
             <Heading>Pure Taqueria</Heading>
             <Spacer />
@@ -353,7 +377,7 @@ function App() {
         </Box>
       </Flex>
       <SimpleGrid marginBottom="20px" spacing="20px" minChildWidth="400px">
-        <Box bg="tomato" p="4">
+        <Box p="4">
           <Center>
             <Heading size="md">Order Menu</Heading>
           </Center>
@@ -367,7 +391,12 @@ function App() {
             <Button
               type="button"
               onClick={() =>
-                alert("Hey" + name + ", your order will be ready soon.")
+                alert(
+                  "Hey " +
+                    name +
+                    ", your order will be ready soon. Your total cost is: $" +
+                    total
+                )
               }
             >
               Order!
@@ -396,7 +425,7 @@ function App() {
         </Box>
         <Reciept />
       </SimpleGrid>
-      <Box w="100%" p="4" bg="red.400">
+      <Box w="100%" p="4">
         <Center>
           <Text>Unpure Taqueria est. 1921</Text>
         </Center>
@@ -407,7 +436,12 @@ function App() {
 
 reactdom.render(
   <ChakraProvider>
-    <App />
+    <Box
+      h="100%"
+      bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
+    >
+      <App />
+    </Box>
   </ChakraProvider>,
   document.getElementById("root")
 );
