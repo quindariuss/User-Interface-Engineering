@@ -1,1 +1,3 @@
 # User-Interface-Engineering
+
+A comprehensive study of techniques in design and implementation of user interfaces engineering. Topics include the foundation of human-computer interaction and interface related to software lifecycle, building a graphic user interface engineering, interaction devices and technologies, human-computer dialogue, cognitive models, usability, the design and development process, user interface management systems (UIMS), interface style and techniques, user learning, and diversity in interaction styles. Major research and the building of a working graphic user interface are included.
