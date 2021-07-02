@@ -1,5 +1,9 @@
 \documentclass[twocolumn,12pt]{report}
 \usepackage[margin=0.5in]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./Images/} }
+\usepackage{pgfplots}
+\pgfplotsset{width=10cm,compat=1.9}
 \begin{document}
 \title{Rethinking the Digital Calendar}
 \author{Quin'darius Lyles-Woods}
@@ -27,6 +31,60 @@ Kennesaw State University\\
 \input{BackgroundStudy.tex}
 \section{Research Methodology}
 \input{ResearchMethodology.tex}
+
+\subsection{Figures}
+Will be adding data after research is conducted
+\begin{tikzpicture}
+\begin{axis}[
+	axis lines = left,
+	xlabel = \(x\),
+	ylabel = {\(f(x)\)},
+]
+%Below the red parabola is defined
+\addplot [
+	domain=-10:10,
+	samples=100,
+	color=red,
+]
+{x^2 - 2*x - 1};
+\addlegendentry{\(x^2 - 2x - 1\)}
+%Here the blue parabola is defined
+\addplot [
+	domain=-10:10,
+	samples=100,
+	color=blue,
+	]
+	{x^2 + 2*x + 1};
+\addlegendentry{\(x^2 + 2x + 1\)}
+
+\end{axis}
+\end{tikzpicture}
+\begin{tikzpicture}
+\begin{axis}[
+	axis lines = left,
+	xlabel = \(x\),
+	ylabel = {\(f(x)\)},
+]
+%Below the red parabola is defined
+\addplot [
+	domain=-10:10,
+	samples=100,
+	color=red,
+]
+{x^2 - 2*x - 1};
+\addlegendentry{\(x^2 - 2x - 1\)}
+%Here the blue parabola is defined
+\addplot [
+	domain=-10:10,
+	samples=100,
+	color=blue,
+	]
+	{x^2 + 2*x + 1};
+\addlegendentry{\(x^2 + 2x + 1\)}
+
+\end{axis}
+\end{tikzpicture}
+
 \section{Analysis and Disscussion}
 \input{AnalysisandDisscussion.tex}
 \end{document}
