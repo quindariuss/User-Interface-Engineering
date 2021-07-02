@@ -10,5 +10,6 @@
     }
   },
   "buildBeforeRunning" : true,
-  "identifier" : "7A0E9740-D8E6-400D-9D12-0F0564206CEB"
+  "identifier" : "7A0E9740-D8E6-400D-9D12-0F0564206CEB",
+  "openLogOnRun" : "fail"
 }
