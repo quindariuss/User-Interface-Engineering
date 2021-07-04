@@ -4,7 +4,8 @@ var canvas = document.getElementById("checkerboard");
 var context = canvas.getContext("2d");
 var x;
 var y;
-const boardpiece = {
+
+var boardpiece = {
   black_king: "black_king",
   black_piece: "black_piece",
   red_king: "black_king",
@@ -93,24 +94,33 @@ for (index = 0; index < 8; index++) {
   }
 }
 
-elements = [];
-
-elements.push({
-  colour: "#05EFFF",
-  width: 50,
-  height: 50,
-  top: 20,
-  left: 15,
-});
-
 function drawBoard() {
   for (index = 0; index < 8; index++) {
     checkerboard[index].forEach(function (box) {
-      console.log(box.top);
       context.fillStyle = box.color;
       context.fillRect(box.left, box.top, box.width, box.height);
-      if (index < 2) context.drawImage(blackpiece, box.left, box.top);
-      if (index > 5) context.drawImage(redpiece, box.left, box.top);
+      console.log("CHECKING");
+      switch (box.board) {
+        case "black_piece":
+          console.log(box.board);
+          context.drawImage(blackpiece, box.left, box.top);
+          break;
+        case "black_king":
+          console.log(box.board);
+          context.drawImage(blackking, box.left, box.top);
+          break;
+        case "red_piece":
+          console.log(box.board);
+          context.drawImage(redpiece, box.left, box.top);
+          break;
+        case "red_king":
+          console.log(box.board);
+          context.drawImage(redking, box.left, box.top);
+          break;
+        case "empty":
+          console.log("empty");
+          break;
+      }
     });
   }
 }
@@ -119,23 +129,13 @@ drawBoard();
 
 console.log(checkerboard);
 
-for (index = 0; index < 8; index++) {
-  for (subindex = 0; subindex < 8; subindex++) {
-    if (
-      x < checkerboard[index][subindex].left &&
-      x > checkerboard[index][subindex].left + 50
-    ) {
-      console.log("Index: " + index, subindex + " was pressed");
-    }
-  }
-}
-
 function assignPiece(index) {
   if (index < 2) {
-    return boardpiece.black_piece;
-  } else if (index > 5) {
-    return boardpiece.red_piece;
+    return "black_piece";
+  }
+  if (index > 5) {
+    return "red_piece";
   } else {
-    return boardpiece.empty;
+    return "empty";
   }
 }
