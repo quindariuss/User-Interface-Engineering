@@ -99,33 +99,25 @@ function drawBoard() {
     checkerboard[index].forEach(function (box) {
       context.fillStyle = box.color;
       context.fillRect(box.left, box.top, box.width, box.height);
-      console.log("CHECKING");
       switch (box.board) {
         case "black_piece":
-          console.log(box.board);
           context.drawImage(blackpiece, box.left, box.top);
           break;
         case "black_king":
-          console.log(box.board);
           context.drawImage(blackking, box.left, box.top);
           break;
         case "red_piece":
-          console.log(box.board);
           context.drawImage(redpiece, box.left, box.top);
           break;
         case "red_king":
-          console.log(box.board);
           context.drawImage(redking, box.left, box.top);
           break;
         case "empty":
-          console.log("empty");
           break;
       }
     });
   }
 }
-
-drawBoard();
 
 console.log(checkerboard);
 
@@ -139,3 +131,5 @@ function assignPiece(index) {
     return "empty";
   }
 }
+
+redking.onload = () => drawBoard();
