@@ -6,14 +6,7 @@ var lasttouchindex = 0;
 var lasttouchsubindex = 0;
 var x;
 var y;
-
-var boardpiece = {
-  black_king: "black_king",
-  black_piece: "black_piece",
-  red_king: "black_king",
-  red_piece: "black_piece",
-  empty: "empty",
-};
+var whoseturn = "red_piece";
 
 var blackpiece = new Image();
 var blackking = new Image();
@@ -64,7 +57,7 @@ for (index = 0; index < 8; index++) {
           height: 50,
           left: 50 * subindex,
           top: 50 * index,
-          board: assignPiece(index),
+          board: "empty",
         };
       } else if (subindex % 2 == 1) {
         checkerboard[index][subindex] = {
@@ -93,7 +86,7 @@ for (index = 0; index < 8; index++) {
           height: 50,
           left: 50 * subindex,
           top: 50 * index,
-          board: assignPiece(index),
+          board: "empty",
         };
       }
     }
@@ -127,11 +120,21 @@ function drawBoard() {
 
 console.log(checkerboard);
 
-function assignPiece(index) {
-  if (index < 2) {
+function assignPiece(index, piece) {
+  if (piece != null) {
+    console.log("checking ");
+    if (index == 0 && piece == "red_piece") {
+      return "red_king";
+    } else if (index == 7 && piece == "black_piece") {
+      return "black_king";
+    } else {
+      return piece;
+    }
+  }
+  if (index < 3) {
     return "black_piece";
   }
-  if (index > 5) {
+  if (index > 4) {
     return "red_piece";
   } else {
     return "empty";
@@ -148,7 +151,12 @@ function move(index, subindex) {
       checkerboard[lasttouchindex][lasttouchsubindex].board = "empty";
     }
   }
+  checkerboard[index][subindex].board = assignPiece(
+    index,
+    checkerboard[index][subindex].board
+  );
 }
+
 redking.onload = () => drawBoard();
 
 function validatemove(index, subindex) {
@@ -156,14 +164,21 @@ function validatemove(index, subindex) {
   console.log(subindex);
   console.log(lasttouchindex);
   console.log(lasttouchsubindex);
-  if (
-    (index == lasttouchindex - 1 && subindex == lasttouchsubindex + 1) ||
-    (index == lasttouchindex - 1 && subindex == lasttouchsubindex - 1) ||
-    (index == lasttouchindex + 1 && subindex == lasttouchsubindex + 1) ||
-    (index == lasttouchindex + 1 && subindex == lasttouchsubindex - 1)
-  ) {
-    console.log(true);
-    return true;
+  if (checkerboard[lasttouchindex][lasttouchsubindex].board == whoseturn) {
+    if (
+      (index == lasttouchindex - 1 && subindex == lasttouchsubindex + 1) ||
+      (index == lasttouchindex - 1 && subindex == lasttouchsubindex - 1) ||
+      (index == lasttouchindex + 1 && subindex == lasttouchsubindex + 1) ||
+      (index == lasttouchindex + 1 && subindex == lasttouchsubindex - 1)
+    ) {
+      if (whoseturn == "black_piece") {
+        whoseturn = "red_piece";
+      } else if (whoseturn == "red_piece") {
+        whoseturn = "black_piece";
+      }
+      console.log(true);
+      return true;
+    }
   }
   console.log(false);
   return false;
