@@ -2,6 +2,8 @@ var boardsize = 8;
 var checkerboard = new Array(8);
 var canvas = document.getElementById("checkerboard");
 var context = canvas.getContext("2d");
+var lasttouchindex = 0;
+var lasttouchsubindex = 0;
 var x;
 var y;
 
@@ -37,12 +39,16 @@ canvas.addEventListener("click", function (event) {
         y > checkerboard[index][subindex].top
       ) {
         console.log("Index: " + index + subindex + " was pressed");
-        checkerboard[index][subindex].color = "FFFFFF";
-        console.log(checkerboard);
-        drawBoard();
+
+        move(index, subindex);
+        if (checkerboard[index][subindex]) {
+        }
+        lasttouchindex = index;
+        lasttouchsubindex = subindex;
       }
     }
   }
+  drawBoard();
 });
 
 for (index = 0; index < 8; index++) {
@@ -131,5 +137,34 @@ function assignPiece(index) {
     return "empty";
   }
 }
-
+function move(index, subindex) {
+  if (checkerboard[index][subindex].board == "empty") {
+    console.log("I can move");
+    if (validatemove(index, subindex)) {
+      console.log(validatemove(index, subindex));
+      console.log("Im moving ");
+      checkerboard[index][subindex].board =
+        checkerboard[lasttouchindex][lasttouchsubindex].board;
+      checkerboard[lasttouchindex][lasttouchsubindex].board = "empty";
+    }
+  }
+}
 redking.onload = () => drawBoard();
+
+function validatemove(index, subindex) {
+  console.log(index);
+  console.log(subindex);
+  console.log(lasttouchindex);
+  console.log(lasttouchsubindex);
+  if (
+    (index == lasttouchindex - 1 && subindex == lasttouchsubindex + 1) ||
+    (index == lasttouchindex - 1 && subindex == lasttouchsubindex - 1) ||
+    (index == lasttouchindex + 1 && subindex == lasttouchsubindex + 1) ||
+    (index == lasttouchindex + 1 && subindex == lasttouchsubindex - 1)
+  ) {
+    console.log(true);
+    return true;
+  }
+  console.log(false);
+  return false;
+}
