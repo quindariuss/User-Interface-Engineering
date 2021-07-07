@@ -4,13 +4,15 @@ var canvas = document.getElementById("checkerboard");
 var context = canvas.getContext("2d");
 var lasttouchindex = 0;
 var lasttouchsubindex = 0;
-var previndex = 0;
-var prevsubindex = 0;
-var currentmoveindex = 0;
-var currentmovesubindex = 0;
+var previndex = null;
+var prevsubindex = null;
+var currentmoveindex = null;
+var currentmovesubindex = null;
 var x;
 var y;
 var whoseturn = "red";
+redcount = 0;
+blackcount = 0;
 
 var blackpiece = new Image();
 var blackking = new Image();
@@ -104,6 +106,9 @@ for (index = 0; index < 8; index++) {
 }
 
 function drawBoard() {
+  document.getElementById("whosemove").innerHTML =
+    "It is " + whoseturn + "'s turn to move";
+
   for (index = 0; index < 8; index++) {
     checkerboard[index].forEach(function (box) {
       context.fillStyle = box.color;
@@ -126,32 +131,71 @@ function drawBoard() {
       }
     });
   }
-
-  context.fillStyle = "#FFFFFF";
+  var tox =
+    checkerboard[currentmoveindex][currentmovesubindex].left +
+    (checkerboard[currentmoveindex][currentmovesubindex].left -
+      checkerboard[previndex][previndex].left <
+    0
+      ? 20
+      : 25);
+  var toy =
+    checkerboard[currentmoveindex][currentmovesubindex].top +
+    (checkerboard[currentmoveindex][currentmovesubindex].top -
+      checkerboard[previndex][previndex].top <
+    0
+      ? 30
+      : 20);
+  var fromx =
+    checkerboard[previndex][prevsubindex].left +
+    (checkerboard[currentmoveindex][currentmovesubindex].left -
+      checkerboard[previndex][previndex].left <
+    0
+      ? 25
+      : 30);
+  var fromy =
+    checkerboard[previndex][prevsubindex].top +
+    (checkerboard[currentmoveindex][currentmovesubindex].top -
+      checkerboard[previndex][previndex].top <
+    0
+      ? 30
+      : 20);
+  var x_center = tox;
+  var y_center = toy;
+  var angle;
+  var x;
+  var y;
+  var r = 10;
   context.beginPath();
-  context.moveTo(
-    checkerboard[previndex][prevsubindex].left,
-    checkerboard[previndex][prevsubindex].top
-  );
-  context.lineTo(
-    checkerboard[currentmoveindex][currentmovesubindex].left,
-    checkerboard[currentmoveindex][currentmovesubindex].top
-  );
-  context.lineTo(
-    checkerboard[currentmoveindex][currentmovesubindex].left - 5,
-    checkerboard[currentmoveindex][currentmovesubindex].top - 5
-  );
-  context.lineTo(
-    checkerboard[currentmoveindex][currentmovesubindex].left + 10,
-    checkerboard[currentmoveindex][currentmovesubindex].top - 5
-  );
-  context.lineTo(
-    checkerboard[currentmoveindex][currentmovesubindex].left,
-    checkerboard[currentmoveindex][currentmovesubindex].top
-  );
+  context.moveTo(fromx, fromy);
+  context.lineTo(tox, toy);
   context.strokeStyle = "white";
   context.lineWidth = 5;
   context.stroke();
+
+  context.beginPath();
+
+  angle = Math.atan2(toy - fromy, tox - fromx);
+  x = r * Math.cos(angle) + x_center;
+  y = r * Math.sin(angle) + y_center;
+
+  context.moveTo(x, y);
+
+  angle += (1 / 3) * (2 * Math.PI);
+  x = r * Math.cos(angle) + x_center;
+  y = r * Math.sin(angle) + y_center;
+
+  context.lineTo(x, y);
+
+  angle += (1 / 3) * (2 * Math.PI);
+  x = r * Math.cos(angle) + x_center;
+  y = r * Math.sin(angle) + y_center;
+
+  context.lineTo(x, y);
+
+  context.closePath();
+  context.fillStyle = "FFFFFF";
+
+  context.fill();
 }
 
 console.log(checkerboard);
@@ -274,9 +318,6 @@ function findhyp(x1, y1, x2, y2) {
 }
 
 function drawArrow(fromx, fromy, tox, toy) {
-  //variables to be used when creating the arrow
-  var c = document.getElementById("checkerboard");
-  var ctx = context.getContext("2d");
   const width = 22;
   var headlen = 10;
   // This makes it so the end of the arrow head is located at tox, toy, don't ask where 1.15 comes from
@@ -286,38 +327,38 @@ function drawArrow(fromx, fromy, tox, toy) {
   var angle = Math.atan2(toy - fromy, tox - fromx);
 
   //starting path of the arrow from the start square to the end square and drawing the stroke
-  ctx.beginPath();
-  ctx.moveTo(fromx, fromy);
-  ctx.lineTo(tox, toy);
-  ctx.strokeStyle = "#cc0000";
-  ctx.lineWidth = width;
-  ctx.stroke();
+  context.beginPath();
+  context.moveTo(fromx, fromy);
+  context.lineTo(tox, toy);
+  context.strokeStyle = "#cc0000";
+  context.lineWidth = width;
+  context.stroke();
 
   //starting a new path from the head of the arrow to one of the sides of the point
-  ctx.beginPath();
-  ctx.moveTo(tox, toy);
-  ctx.lineTo(
+  context.beginPath();
+  context.moveTo(tox, toy);
+  context.lineTo(
     tox - headlen * Math.cos(angle - Math.PI / 7),
     toy - headlen * Math.sin(angle - Math.PI / 7)
   );
 
   //path from the side point of the arrow, to the other side point
-  ctx.lineTo(
+  context.lineTo(
     tox - headlen * Math.cos(angle + Math.PI / 7),
     toy - headlen * Math.sin(angle + Math.PI / 7)
   );
 
   //path from the side point back to the tip of the arrow, and then again to the opposite side point
-  ctx.lineTo(tox, toy);
-  ctx.lineTo(
+  context.lineTo(tox, toy);
+  context.lineTo(
     tox - headlen * Math.cos(angle - Math.PI / 7),
     toy - headlen * Math.sin(angle - Math.PI / 7)
   );
 
   //draws the paths created above
-  ctx.strokeStyle = "#cc0000";
-  ctx.lineWidth = width;
-  ctx.stroke();
-  ctx.fillStyle = "#cc0000";
-  ctx.fill();
+  context.strokeStyle = "#FFFFFF";
+  context.lineWidth = 10;
+  context.stroke();
+  context.fillStyle = "#FFFFFF";
+  context.fill();
 }
