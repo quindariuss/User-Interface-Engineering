@@ -128,17 +128,30 @@ function drawBoard() {
   }
 
   context.fillStyle = "#FFFFFF";
-  context.fillRect(
+  context.beginPath();
+  context.moveTo(
     checkerboard[previndex][prevsubindex].left,
-    checkerboard[previndex][prevsubindex].top,
-    findhyp(
-      checkerboard[previndex][prevsubindex].left,
-      checkerboard[previndex][prevsubindex].top,
-      checkerboard[currentmoveindex][currentmovesubindex].left,
-      checkerboard[currentmoveindex][currentmovesubindex].top
-    ),
-    10
+    checkerboard[previndex][prevsubindex].top
   );
+  context.lineTo(
+    checkerboard[currentmoveindex][currentmovesubindex].left,
+    checkerboard[currentmoveindex][currentmovesubindex].top
+  );
+  context.lineTo(
+    checkerboard[currentmoveindex][currentmovesubindex].left - 5,
+    checkerboard[currentmoveindex][currentmovesubindex].top - 5
+  );
+  context.lineTo(
+    checkerboard[currentmoveindex][currentmovesubindex].left + 10,
+    checkerboard[currentmoveindex][currentmovesubindex].top - 5
+  );
+  context.lineTo(
+    checkerboard[currentmoveindex][currentmovesubindex].left,
+    checkerboard[currentmoveindex][currentmovesubindex].top
+  );
+  context.strokeStyle = "white";
+  context.lineWidth = 5;
+  context.stroke();
 }
 
 console.log(checkerboard);
@@ -258,4 +271,53 @@ function findhyp(x1, y1, x2, y2) {
   adjacent = adjacent * adjacent;
 
   return Math.sqrt(opposite + adjacent);
+}
+
+function drawArrow(fromx, fromy, tox, toy) {
+  //variables to be used when creating the arrow
+  var c = document.getElementById("checkerboard");
+  var ctx = context.getContext("2d");
+  const width = 22;
+  var headlen = 10;
+  // This makes it so the end of the arrow head is located at tox, toy, don't ask where 1.15 comes from
+  tox -= Math.cos(angle) * (width * 1.15);
+  toy -= Math.sin(angle) * (width * 1.15);
+
+  var angle = Math.atan2(toy - fromy, tox - fromx);
+
+  //starting path of the arrow from the start square to the end square and drawing the stroke
+  ctx.beginPath();
+  ctx.moveTo(fromx, fromy);
+  ctx.lineTo(tox, toy);
+  ctx.strokeStyle = "#cc0000";
+  ctx.lineWidth = width;
+  ctx.stroke();
+
+  //starting a new path from the head of the arrow to one of the sides of the point
+  ctx.beginPath();
+  ctx.moveTo(tox, toy);
+  ctx.lineTo(
+    tox - headlen * Math.cos(angle - Math.PI / 7),
+    toy - headlen * Math.sin(angle - Math.PI / 7)
+  );
+
+  //path from the side point of the arrow, to the other side point
+  ctx.lineTo(
+    tox - headlen * Math.cos(angle + Math.PI / 7),
+    toy - headlen * Math.sin(angle + Math.PI / 7)
+  );
+
+  //path from the side point back to the tip of the arrow, and then again to the opposite side point
+  ctx.lineTo(tox, toy);
+  ctx.lineTo(
+    tox - headlen * Math.cos(angle - Math.PI / 7),
+    toy - headlen * Math.sin(angle - Math.PI / 7)
+  );
+
+  //draws the paths created above
+  ctx.strokeStyle = "#cc0000";
+  ctx.lineWidth = width;
+  ctx.stroke();
+  ctx.fillStyle = "#cc0000";
+  ctx.fill();
 }
