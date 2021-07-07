@@ -4,14 +4,19 @@ var canvas = document.getElementById("checkerboard");
 var context = canvas.getContext("2d");
 var lasttouchindex = 0;
 var lasttouchsubindex = 0;
+var previndex = 0;
+var prevsubindex = 0;
+var currentmoveindex = 0;
+var currentmovesubindex = 0;
 var x;
 var y;
-var whoseturn = "red_piece";
+var whoseturn = "red";
 
 var blackpiece = new Image();
 var blackking = new Image();
 var redpiece = new Image();
 var redking = new Image();
+var count = 0;
 blackpiece.src = "./black-piece.png";
 blackking.src = "./black-king.png";
 redpiece.src = "./red-piece.png";
@@ -20,6 +25,8 @@ canvasX = canvas.offsetLeft;
 canvasY = canvas.offsetTop;
 
 canvas.addEventListener("click", function (event) {
+  count++;
+  console.log({ count });
   x = event.pageX - canvasX;
   y = event.pageY - canvasY;
   console.log(x, y);
@@ -31,16 +38,19 @@ canvas.addEventListener("click", function (event) {
         y < checkerboard[index][subindex].top + 50 &&
         y > checkerboard[index][subindex].top
       ) {
-        console.log("Index: " + index + subindex + " was pressed");
-
         move(index, subindex);
-        if (checkerboard[index][subindex]) {
-        }
+
         lasttouchindex = index;
         lasttouchsubindex = subindex;
       }
     }
   }
+  console.log(
+    "Previous Index is: " + previndex + prevsubindex + " was pressed"
+  );
+  console.log(
+    "Current Index is: " + lasttouchindex + lasttouchsubindex + " was pressed"
+  );
   drawBoard();
 });
 
@@ -116,13 +126,25 @@ function drawBoard() {
       }
     });
   }
+
+  context.fillStyle = "#FFFFFF";
+  context.fillRect(
+    checkerboard[previndex][prevsubindex].left,
+    checkerboard[previndex][prevsubindex].top,
+    findhyp(
+      checkerboard[previndex][prevsubindex].left,
+      checkerboard[previndex][prevsubindex].top,
+      checkerboard[currentmoveindex][currentmovesubindex].left,
+      checkerboard[currentmoveindex][currentmovesubindex].top
+    ),
+    10
+  );
 }
 
 console.log(checkerboard);
 
 function assignPiece(index, piece) {
   if (piece != null) {
-    console.log("checking ");
     if (index == 0 && piece == "red_piece") {
       return "red_king";
     } else if (index == 7 && piece == "black_piece") {
@@ -140,15 +162,19 @@ function assignPiece(index, piece) {
     return "empty";
   }
 }
+
 function move(index, subindex) {
   if (checkerboard[index][subindex].board == "empty") {
-    console.log("I can move");
     if (validatemove(index, subindex)) {
       console.log(validatemove(index, subindex));
-      console.log("Im moving ");
+
       checkerboard[index][subindex].board =
         checkerboard[lasttouchindex][lasttouchsubindex].board;
       checkerboard[lasttouchindex][lasttouchsubindex].board = "empty";
+      previndex = lasttouchindex;
+      prevsubindex = lasttouchsubindex;
+      currentmoveindex = index;
+      currentmovesubindex = subindex;
     }
   }
   checkerboard[index][subindex].board = assignPiece(
@@ -160,26 +186,76 @@ function move(index, subindex) {
 redking.onload = () => drawBoard();
 
 function validatemove(index, subindex) {
-  console.log(index);
-  console.log(subindex);
-  console.log(lasttouchindex);
-  console.log(lasttouchsubindex);
-  if (checkerboard[lasttouchindex][lasttouchsubindex].board == whoseturn) {
+  if (
+    checkerboard[lasttouchindex][lasttouchsubindex].board.substring(
+      0,
+      checkerboard[lasttouchindex][lasttouchsubindex].board.indexOf("_", 0)
+    ) == whoseturn
+  ) {
     if (
       (index == lasttouchindex - 1 && subindex == lasttouchsubindex + 1) ||
       (index == lasttouchindex - 1 && subindex == lasttouchsubindex - 1) ||
       (index == lasttouchindex + 1 && subindex == lasttouchsubindex + 1) ||
       (index == lasttouchindex + 1 && subindex == lasttouchsubindex - 1)
     ) {
+      if (whoseturn == "black") {
+        whoseturn = "red";
+      } else if (whoseturn == "red") {
+        whoseturn = "black";
+      }
+      return true;
+    }
+    if (index == lasttouchindex + 2 && subindex == lasttouchsubindex - 2) {
+      checkerboard[lasttouchindex + 1][lasttouchsubindex - 1].board = "empty";
+
+      if (whoseturn == "black") {
+        whoseturn = "red";
+      } else if (whoseturn == "red") {
+        whoseturn = "black";
+      }
+      console.log(true);
+      return true;
+    }
+    if (index == lasttouchindex + 2 && subindex == lasttouchsubindex + 2) {
+      checkerboard[lasttouchindex + 1][lasttouchsubindex + 1].board = "empty";
+
+      if (whoseturn == "black") {
+        whoseturn = "red";
+      } else if (whoseturn == "red") {
+        whoseturn = "black";
+      }
+      return true;
+    }
+    if (index == lasttouchindex - 2 && subindex == lasttouchsubindex - 2) {
+      checkerboard[lasttouchindex - 1][lasttouchsubindex - 1].board = "empty";
+      console.log("I want to kill 3");
       if (whoseturn == "black_piece") {
         whoseturn = "red_piece";
       } else if (whoseturn == "red_piece") {
         whoseturn = "black_piece";
       }
-      console.log(true);
+      return true;
+    }
+    if (index == lasttouchindex - 2 && subindex == lasttouchsubindex + 2) {
+      checkerboard[lasttouchindex - 1][lasttouchsubindex + 1].board = "empty";
+
+      if (whoseturn == "black_piece") {
+        whoseturn = "red_piece";
+      } else if (whoseturn == "red_piece") {
+        whoseturn = "black_piece";
+      }
       return true;
     }
   }
-  console.log(false);
   return false;
+}
+
+function findhyp(x1, y1, x2, y2) {
+  var opposite = y2 - y1;
+  var adjacent = x2 - x1;
+
+  opposite = opposite * opposite;
+  adjacent = adjacent * adjacent;
+
+  return Math.sqrt(opposite + adjacent);
 }
