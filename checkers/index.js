@@ -41,7 +41,6 @@ canvas.addEventListener("click", function (event) {
         y > checkerboard[index][subindex].top
       ) {
         move(index, subindex);
-
         lasttouchindex = index;
         lasttouchsubindex = subindex;
       }
@@ -305,60 +304,4 @@ function validatemove(index, subindex) {
     }
   }
   return false;
-}
-
-function findhyp(x1, y1, x2, y2) {
-  var opposite = y2 - y1;
-  var adjacent = x2 - x1;
-
-  opposite = opposite * opposite;
-  adjacent = adjacent * adjacent;
-
-  return Math.sqrt(opposite + adjacent);
-}
-
-function drawArrow(fromx, fromy, tox, toy) {
-  const width = 22;
-  var headlen = 10;
-  // This makes it so the end of the arrow head is located at tox, toy, don't ask where 1.15 comes from
-  tox -= Math.cos(angle) * (width * 1.15);
-  toy -= Math.sin(angle) * (width * 1.15);
-
-  var angle = Math.atan2(toy - fromy, tox - fromx);
-
-  //starting path of the arrow from the start square to the end square and drawing the stroke
-  context.beginPath();
-  context.moveTo(fromx, fromy);
-  context.lineTo(tox, toy);
-  context.strokeStyle = "#cc0000";
-  context.lineWidth = width;
-  context.stroke();
-
-  //starting a new path from the head of the arrow to one of the sides of the point
-  context.beginPath();
-  context.moveTo(tox, toy);
-  context.lineTo(
-    tox - headlen * Math.cos(angle - Math.PI / 7),
-    toy - headlen * Math.sin(angle - Math.PI / 7)
-  );
-
-  //path from the side point of the arrow, to the other side point
-  context.lineTo(
-    tox - headlen * Math.cos(angle + Math.PI / 7),
-    toy - headlen * Math.sin(angle + Math.PI / 7)
-  );
-
-  //path from the side point back to the tip of the arrow, and then again to the opposite side point
-  context.lineTo(tox, toy);
-  context.lineTo(
-    tox - headlen * Math.cos(angle - Math.PI / 7),
-    toy - headlen * Math.sin(angle - Math.PI / 7)
-  );
-
-  //draws the paths created above
-  context.strokeStyle = "#FFFFFF";
-  context.lineWidth = 10;
-  context.stroke();
-  context.fillStyle = "#FFFFFF";
-  context.fill();
 }
