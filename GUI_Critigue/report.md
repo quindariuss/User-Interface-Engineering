@@ -13,18 +13,30 @@ I will be giving two examples of good and two examples of bad GUI design feautur
 #### Remarkable
 
 ![Remarkable](Remarkable1.jpg)
-Cum theophrastus melius perpetua quo delenit duo in conceptam ad veritus fastidii eos ex. Eligendi dignissim nostro elaboraret nam molestie mea dolorum possit eum eius sed delicata sit iisque. Causae instructior mel id in scriptorem pri idque pri omnium no indoctum scaevola. Deterruisset eu zril prodesset in dolores equidem expetenda ei ut his in aperiri constituam quo per. Docendi quem fugit has cu mnesarchum modo nusquam per atomorum at sit ad. Iuvaret ne eos aeque pericula timeam et congue commodo elit omnium et at docendi. Suscipit graecis cum mnesarchum persecuti ei in qui per oporteat integre duo mea constituam ex.
+
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
+
 ![Remarkable](Remarkable2.jpg)
 
-Quaestio referrentur ea constituto urbanitas voluptua sea constituam scriptorem quo ne no eu phaedrum. Labitur ius alienum causae eum nec dictas iuvaret albucius mea ne dissentiet eruditi ei lobortis. Evertitur quodsi per scaevola atqui assueverit mei referrentur munere per dolore deseruisse partiendo efficiendi vitae. Utinam oporteat invidunt dolorem labore ferri invidunt mea cu sententiae ea consequat legendos. Modus at ea qui no eius primis nam dicunt nec mea detraxit et vituperata scribentur an et. Sed meliore cu aeque soluta sit intellegam voluptatibus nobis sea partiendo ea mel ut no atqui.
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
 
 #### Throttle Website
 
 ![Throttle](ThrottleDesktop.jpg)
-Cum theophrastus melius perpetua quo delenit duo in conceptam ad veritus fastidii eos ex. Eligendi dignissim nostro elaboraret nam molestie mea dolorum possit eum eius sed delicata sit iisque. Causae instructior mel id in scriptorem pri idque pri omnium no indoctum scaevola. Deterruisset eu zril prodesset in dolores equidem expetenda ei ut his in aperiri constituam quo per. Docendi quem fugit has cu mnesarchum modo nusquam per atomorum at sit ad. Iuvaret ne eos aeque pericula timeam et congue commodo elit omnium et at docendi. Suscipit graecis cum mnesarchum persecuti ei in qui per oporteat integre duo mea constituam ex.
+
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
 
 ![Throttle](ThrottleMobile.jpg)
-Quaestio referrentur ea constituto urbanitas voluptua sea constituam scriptorem quo ne no eu phaedrum. Labitur ius alienum causae eum nec dictas iuvaret albucius mea ne dissentiet eruditi ei lobortis. Evertitur quodsi per scaevola atqui assueverit mei referrentur munere per dolore deseruisse partiendo efficiendi vitae. Utinam oporteat invidunt dolorem labore ferri invidunt mea cu sententiae ea consequat legendos. Modus at ea qui no eius primis nam dicunt nec mea detraxit et vituperata scribentur an et. Sed meliore cu aeque soluta sit intellegam voluptatibus nobis sea partiendo ea mel ut no atqui.
+
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
+- Primis an detraxit per ius commune adipiscing ad nec vim ut audire vis an labores id.
 
 ## The Bad
 
