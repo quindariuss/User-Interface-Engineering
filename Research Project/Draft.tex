@@ -1,6 +1,8 @@
 \documentclass[twocolumn,12pt]{report}
 \usepackage[margin=0.5in]{geometry}
 \usepackage{graphicx}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{test.bib}
 \graphicspath{ {./Images/} }
 \usepackage{pgfplots}
 \pgfplotsset{width=10cm,compat=1.9}
@@ -21,6 +23,7 @@ Kennesaw State University\\
 1000 Chastain Road, Kennesaw, GA 30144\\
 \hspace{6cm}
 }]
+As \textcite{calvisual} says
 \section*{Abstract}
 \input{Abstract.tex}
 \section*{\small Keywords}
@@ -87,4 +90,5 @@ Will be adding data after research is conducted
 
 \section{Analysis and Disscussion}
 \input{AnalysisandDisscussion.tex}
+\printbibliography
 \end{document}

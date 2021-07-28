@@ -1,0 +1,59 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{calvisual}{book}{}
+      \name{author}{3}{}{%
+        {{hash=ff10642aaa3da2fcdf44f6187f33f1a0}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Dandan},
+           giveni={D\bibinitperiod}}}%
+        {{hash=795a99893c2a080a084deb26e429696e}{%
+           family={Tory},
+           familyi={T\bibinitperiod},
+           given={Melanie},
+           giveni={M\bibinitperiod}}}%
+        {{hash=36d88966bbbd9a385bfd86a319c01137}{%
+           family={Bartram},
+           familyi={B\bibinitperiod},
+           given={Lyn},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{0cfe672016ffaa7cbf834d4d10164d7b}
+      \strng{fullhash}{0cfe672016ffaa7cbf834d4d10164d7b}
+      \strng{bibnamehash}{0cfe672016ffaa7cbf834d4d10164d7b}
+      \strng{authorbibnamehash}{0cfe672016ffaa7cbf834d4d10164d7b}
+      \strng{authornamehash}{0cfe672016ffaa7cbf834d4d10164d7b}
+      \strng{authorfullhash}{0cfe672016ffaa7cbf834d4d10164d7b}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{A Field Study of On-Calendar Visualizations}
+      \field{year}{2016}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -2,7 +2,7 @@
   "actions" : {
     "build" : {
       "enabled" : true,
-      "script" : "pdflatex Draft.tex"
+      "script" : "pdflatex Draft.tex\nbiber Draft"
     },
     "run" : {
       "enabled" : true,

@@ -1,0 +1,15 @@
+{
+  "clips" : [
+    {
+      "content" : "@book{${:Citation Name},\nauthor= \"${:Author}\",\ntitle = \"${:Title}\",\nyear = \"${:Year}\",\npublisher = \"${:Publisher}\"\n}",
+      "name" : "Book Citation",
+      "scope" : "editor",
+      "syntax" : "plain-text",
+      "trigger" : "book_cite"
+    },
+    {
+      "content" : "author = ${:Author}",
+      "name" : "Author"
+    }
+  ]
+}
